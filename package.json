@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "project",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "test"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/kalininaekaterina2004/frontend-project-44.git"
   },
   "author": "",
