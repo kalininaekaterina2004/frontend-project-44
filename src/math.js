@@ -5,8 +5,4 @@ export const magicNumbers = (min = 1, max = 50) => {
   return randomNumber;
 };
 
-export const getOperator = (array) => {
-  const index = Math.floor(Math.random() * array.length);
-  const operator = array[index];
-  return operator;
-};
+
