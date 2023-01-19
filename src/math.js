@@ -17,3 +17,15 @@ export const getOperator = (array) => {
   const operator = array[index];
   return operator;
 };
+export const getDivisor = (a, b) => {
+  let x = a;
+  let y = b;
+  while (x !== y) {
+    if (x > y) {
+      x -= y;
+    } else {
+      y -= x;
+    }
+  }
+  return x;
+};
