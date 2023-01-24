@@ -1,8 +1,6 @@
 import readLineSync from 'readline-sync';
 
-export const type = (str) => {
-  console.log(str);
-};
+
 
 export const answerForm = (variable, dataType) => {
   const result = readLineSync.question(`Question: ${variable} \nYour answer: `);
@@ -14,11 +12,11 @@ export const answerForm = (variable, dataType) => {
 
 export const checkAnswer = (userAnswer, correctAnswer, userName, i) => {
   if (userAnswer === correctAnswer) {
-    type('Correct!');
+    console.log('Correct!');
   } else {
-    type(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
     return false;
   }
-  if (i === 2) type(`Congratulations, ${userName}!`);
+  if (i === 2) console.log(`Congratulations, ${userName}!`);
   return true;
 };

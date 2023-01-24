@@ -30,7 +30,9 @@ export const getDivisor = (a, b) => {
   return x;
 };
 
-export const progress = (n, a) => {
+export const progress = (a, d) => {
   let result = '';
   const length = magicNumbers(5, 10);
   const desired = magicNumbers(1, length - 1);
+
+};
