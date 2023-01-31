@@ -1,4 +1,4 @@
-export const magicNumbers = (min = 1, max = 50) => {
+export const magicNumbers = (min = 1, max = 70) => {
   const minimal = Math.ceil(min);
   const maximum = Math.floor(max);
   const randomNumber = Math.floor(Math.random() * (maximum - minimal + 1)) + minimal;
@@ -17,7 +17,9 @@ export const getOperator = (array) => {
   const operator = array[index];
   return operator;
 };
-export const getDivisor = (x, y) => {
+export const getDivisor = (a, b) => {
+  let x = a;
+  let y = b;
   while (x !== y) {
     if (x > y) {
       x -= y;
@@ -28,16 +30,17 @@ export const getDivisor = (x, y) => {
   return x;
 };
 
-export const progress = (a, d) => {
+export const progress = (n, a) => {
   let result = '';
   const length = magicNumbers(5, 10);
   const desired = magicNumbers(1, length - 1);
   for (let i = 0; i < length; i += 1) {
-    const formula = (a + (d * i));
-    result += (i !== desired) ? `${formula}` : '.. ';
+    const formula = (n + (a * i));
+    result += (i !== desired) ? `${formula} ` : '.. ';
   }
   return result;
 };
+
 export const letprogress = (str) => {
   const sort = str.split(' ');
   const indexSearch = sort.indexOf('..');
