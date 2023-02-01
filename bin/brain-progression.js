@@ -6,9 +6,10 @@ import { magicNumbers, progress, letprogress } from '../src/math.js';
 
 const progression = () => {
   const userName = welcome('What number is missing in the progression?');
-  for (let i = 0; i < 3; i += 1) {
+
+  for (let attempts = 0; attempts < 3; attempts += 1) {
     const a = magicNumbers();
-    const d = magicNumbers(2, 5);
+    const d = magicNumbers(2, 12);
     const prog = progress(a, d);
     const userAnswer = answerForm(prog, 'string');
     const correctAnswer = letprogress(prog);
