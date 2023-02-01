@@ -30,12 +30,12 @@ export const getDivisor = (a, b) => {
   return x;
 };
 
-export const progress = (n, a) => {
+export const progress = (a, d) => {
   let result = '';
   const length = magicNumbers(5, 10);
   const desired = magicNumbers(1, length - 1);
   for (let i = 0; i < length; i += 1) {
-    const formula = (n + (a * i));
+    const formula = (a + (d * i));
     result += (i !== desired) ? `${formula} ` : '.. ';
   }
   return result;
@@ -50,6 +50,6 @@ export const letprogress = (str) => {
   return `${solve}`;
 };
 export const isPrime = (number) => {
-  const primal = [2, 3, 5, 7, 11, 13, 17, 19];
+  const primal = [2, 1367];
   return (primal.includes(number)) ? 'yes' : 'no';
 };
