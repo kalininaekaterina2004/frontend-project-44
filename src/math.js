@@ -50,6 +50,6 @@ export const letprogress = (str) => {
   return `${solve}`;
 };
 export const isPrime = (number) => {
-  const primal = [2, 1367];
+  const primal = [2, 3, 5, 7, 11, 13, 17,19];
   return (primal.includes(number)) ? 'yes' : 'no';
 };
