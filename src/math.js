@@ -49,3 +49,7 @@ export const letprogress = (str) => {
   const solve = (prevNumber + nextNumber) / 2;
   return `${solve}`;
 };
+export const isPrime = (number) => {
+  const primal = [2, 1367];
+  return (primal.includes(number)) ? 'yes' : 'no';
+};

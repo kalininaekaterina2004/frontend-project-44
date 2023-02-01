@@ -1,17 +1,14 @@
 #!/usr/bin/env node
 import welcome from '../src/cli.js';
 import { answerForm, checkAnswer } from '../src/index.js';
-import { magicNumbers } from '../src/math.js';
+import { magicNumbers, isPrime } from '../src/math.js';
 
 const prime = () => {
   const userName = welcome('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
-    const random = magicNumbers(1, 1367);
-    const b = magicNumbers();
-    const c = b !== random;
-    const example = `${random}`;
-    const userAnswer = answerForm(example, 'string');
-    const correctAnswer = random % 2 === 0 && random % c === 0 ? 'no' : 'yes';
+    const randomNumber = magicNumbers();
+    const userAnswer = answerForm(randomNumber, 'string');
+    const correctAnswer = isPrime(randomNumber);
 
     if (!checkAnswer(userAnswer, correctAnswer, userName, i)) break;
   }
