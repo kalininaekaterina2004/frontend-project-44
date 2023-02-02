@@ -33,7 +33,7 @@ export const getDivisor = (a, b) => {
 export const progress = (a, d) => {
   let result = '';
   const length = magicNumbers(5, 10);
-  const desired = magicNumbers(1, length - 1);
+  const desired = magicNumbers(1, length - 2);
   for (let i = 0; i < length; i += 1) {
     const formula = (a + (d * i));
     result += (i !== desired) ? `${formula} ` : '.. ';
@@ -49,6 +49,7 @@ export const letprogress = (str) => {
   const solve = (prevNumber + nextNumber) / 2;
   return `${solve}`;
 };
+
 export const isPrime = (number) => {
   const primal = [2, 1367];
   return (primal.includes(number)) ? 'yes' : 'no';
