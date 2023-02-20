@@ -6,9 +6,9 @@ import { magicNumbers, isPrime } from '../math.js';
 const prime = () => {
   const userName = welcome('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = magicNumbers();
+    const randomNumber = magicNumbers(1, 100);
     const userAnswer = answerForm(randomNumber, 'string');
-    const correctAnswer = isPrime(randomNumber);
+    const correctAnswer = (isPrime(randomNumber)) ? 'yes' : 'no';
 
     if (!checkAnswer(userAnswer, correctAnswer, userName, i)) break;
   }
