@@ -4,7 +4,7 @@ import welcome from '../cli.js';
 import { answerForm, checkAnswer } from '../index.js';
 import { getRandomInRange } from '../math.js';
 
- const progress = (a, d) => {
+const progress = (a, d) => {
   let result = '';
   const length = getRandomInRange(5, 10);
   const desired = getRandomInRange(1, length - 2);
@@ -15,7 +15,7 @@ import { getRandomInRange } from '../math.js';
   return result;
 };
 
- const letprogress = (str) => {
+const letprogress = (str) => {
   const sort = str.split(' ');
   const indexSearch = sort.indexOf('..');
   const prevNumber = parseInt(sort[indexSearch - 1], 10);
@@ -38,4 +38,3 @@ const progression = () => {
 };
 
 export default progression;
-  
