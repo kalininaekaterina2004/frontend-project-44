@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import welcome from '../cli.js';
-import { answerForm, checkAnswer } from '../index.js';
+import runEngine from '../index.js';
 import getRandomInRange from '../math.js';
 
 const calculator = (x, y, oper) => {
@@ -19,29 +18,16 @@ const getOperator = (array) => {
 };
 
 const calc = () => {
-  const userName = welcome('What is the result of the expression?');
-  for (let i = 0; i < 3; i += 1) {
-    const operator = getOperator(['+', '-', '*']);
-    const x = getRandomInRange(1, 12);
-    const y = getRandomInRange(1, 12);
-    const example = `${x} ${operator} ${y}`;
-    const userAnswer = answerForm(example);
-    let correctAnswer = 0;
-    switch (operator) {
-      case '+':
-        correctAnswer = calculator(x, y, '+');
-        break;
-
-      case '-':
-        correctAnswer = calculator(x, y, '-');
-        break;
-      case '*':
-        correctAnswer = calculator(x, y, '*');
-        break;
-      default:
-    }
-    if (!checkAnswer(userAnswer, correctAnswer, userName, i)) break;
-  }
+  const rules = 'What is the result of the expression?';
+  const generateRound = () => {
+    const oper = getOperator(['+', '-', '*']);
+    const x = getRandomInRange(1, 20);
+    const y = getRandomInRange(1, 20);
+    const primer = `${x} ${oper} ${y}`;
+    const correctCalc = calculator(x, y, oper);
+    return [primer, correctCalc.toString()];
+  };
+  runEngine(rules, generateRound);
 };
 
 export default calc;

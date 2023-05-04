@@ -1,20 +1,23 @@
 import readLineSync from 'readline-sync';
 
-export const answerForm = (variable, dataType) => {
-  const result = readLineSync.question(`Question: ${variable} \nYour answer: `);
-  if (dataType === 'string') {
-    return result;
+const runEngine = (rules, generateRound) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readLineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log(rules);
+
+  const roundsCount = 3;
+  for (let i = 0; i < roundsCount; i += 1) {
+    const [question, correctAnswer] = generateRound();
+    const userAnswer = readLineSync.question(`Question: ${question} \nYour answer: `);
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
+      return;
+    }
   }
-  return parseInt(result, 10);
+  console.log(`Congratulations, ${userName}!`);
 };
 
-export const checkAnswer = (userAnswer, correctAnswer, userName, i) => {
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
-    return false;
-  }
-  if (i === 2) console.log(`Congratulations, ${userName}!`);
-  return true;
-};
+export default runEngine;

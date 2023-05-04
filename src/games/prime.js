@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import welcome from '../cli.js';
-import { answerForm, checkAnswer } from '../index.js';
+import runEngine from '../index.js';
 import getRandomInRange from '../math.js';
 
 const isPrime = (number) => {
@@ -13,15 +12,13 @@ const isPrime = (number) => {
 };
 
 const prime = () => {
-  const userName = welcome('Answer "yes" if given number is prime. Otherwise answer "no".');
-  for (let i = 0; i < 3; i += 1) {
+  const rules = ('Answer "yes" if given number is prime. Otherwise answer "no".');
+  const generateRound = () => {
     const randomNumber = getRandomInRange(1, 100);
-    const examplePrime = `${randomNumber}`;
-    const userAnswer = answerForm(examplePrime, 'string');
     const correctAnswer = (isPrime(randomNumber)) ? 'yes' : 'no';
 
-    if (!checkAnswer(userAnswer, correctAnswer, userName, i)) break;
-  }
+    return [randomNumber, correctAnswer];
+  };
+  runEngine(rules, generateRound);
 };
-
 export default prime;

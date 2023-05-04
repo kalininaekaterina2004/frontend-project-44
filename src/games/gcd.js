@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import welcome from '../cli.js';
-import { answerForm, checkAnswer } from '../index.js';
+import runEngine from '../index.js';
 import getRandomInRange from '../math.js';
 
 const getDivisor = (a, b) => {
@@ -18,16 +17,15 @@ const getDivisor = (a, b) => {
 };
 
 const gcd = () => {
-  const userName = welcome('Find the greatest common divisor of given numbers.');
-  for (let i = 0; i < 3; i += 1) {
+  const rules = 'Find the greatest common divisor of given numbers.';
+  const generateRound = () => {
     const x = getRandomInRange();
     const y = getRandomInRange();
     const ex = `${x} ${y}`;
-    const userAnswer = answerForm(ex);
     const correctAnswer = getDivisor(x, y);
-
-    if (!checkAnswer(userAnswer, correctAnswer, userName, i)) break;
-  }
+    return [ex, correctAnswer.toString()];
+  };
+  runEngine(rules, generateRound);
 };
 
 export default gcd;
