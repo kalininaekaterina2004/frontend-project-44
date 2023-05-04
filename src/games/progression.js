@@ -28,7 +28,7 @@ const progression = () => {
 
   for (let i = 0; i < 3; i += 1) {
     const a = getRandomInRange();
-    const d = getRandomInRange(2, 8);
+    const d = getRandomInRange(2, 10);
     const prog = progress(a, d);
     const userAnswer = answerForm(prog, 'string');
     const correctAnswer = letprogress(prog);
