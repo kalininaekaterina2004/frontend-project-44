@@ -2,7 +2,7 @@
 
 import welcome from '../cli.js';
 import { answerForm, checkAnswer } from '../index.js';
-import { getRandomInRange } from '../math.js';
+import getRandomInRange from '../math.js';
 
 const even = () => {
   const userName = welcome('Answer "yes" if the number is even, otherwise answer "no".');

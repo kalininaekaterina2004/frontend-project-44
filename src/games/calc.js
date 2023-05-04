@@ -2,7 +2,7 @@
 
 import welcome from '../cli.js';
 import { answerForm, checkAnswer } from '../index.js';
-import { getRandomInRange } from '../math.js';
+import getRandomInRange from '../math.js';
 
 const calculator = (x, y, oper) => {
   let result = 0;

@@ -2,7 +2,7 @@
 
 import welcome from '../cli.js';
 import { answerForm, checkAnswer } from '../index.js';
-import { getRandomInRange } from '../math.js';
+import getRandomInRange from '../math.js';
 
 const getDivisor = (a, b) => {
   let x = a;

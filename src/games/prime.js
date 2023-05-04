@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import welcome from '../cli.js';
 import { answerForm, checkAnswer } from '../index.js';
-import { getRandomInRange } from '../math.js';
+import getRandomInRange from '../math.js';
 
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
