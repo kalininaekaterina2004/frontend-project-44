@@ -18,7 +18,7 @@ export const pass = (str) => {
 };
 
 export const isProgressing = (n, a) => {
-  const d = getRandomInRange(1, 30);
+  const d = getRandomInRange(1, 15);
   const hidden = getRandomInRange(1, n - 1);
   let result = '';
   for (let i = 0; i < n; i += 1) {
@@ -27,16 +27,16 @@ export const isProgressing = (n, a) => {
   return result;
 };
 
-const progression = () => {
+ export default () => {
   const rules = 'What number is missing in the progression?';
   const generateRound = () => {
     const n = getRandomInRange(5, 10);
     const a = getRandomInRange(2, 25);
     const ex = isProgressing(n, a);
-    const correctProgressing = pass(ex);
-    return [ex, correctProgressing];
+    const correctAnswer = pass(ex);
+    return [ex, correctAnswer];
   };
   runEngine(rules, generateRound);
 };
 
-export default progression;
+
