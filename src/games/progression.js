@@ -3,7 +3,7 @@
 import runEngine from '../index.js';
 import getRandomInRange from '../math.js';
 
-export const pass = (str) => {
+const pass = (str) => {
   const prog = str.split(' ');
   const indOfHidden = prog.indexOf('..');
   let result = 0;
@@ -17,7 +17,7 @@ export const pass = (str) => {
   return `${result}`;
 };
 
-export const isProgressing = (n, a) => {
+const isProgressing = (n, a) => {
   const d = getRandomInRange(1, 15);
   const hidden = getRandomInRange(1, n - 1);
   let result = '';
@@ -27,7 +27,7 @@ export const isProgressing = (n, a) => {
   return result;
 };
 
- export default () => {
+export default () => {
   const rules = 'What number is missing in the progression?';
   const generateRound = () => {
     const n = getRandomInRange(5, 10);
@@ -38,5 +38,3 @@ export const isProgressing = (n, a) => {
   };
   runEngine(rules, generateRound);
 };
-
-
